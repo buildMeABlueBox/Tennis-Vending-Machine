@@ -42,25 +42,11 @@ public class TennisVendingMachine {
      */
     public void addToCart(int itemId, int amount){
         if(itemId < 0 || itemId > 4) throw  new IllegalArgumentException("the item id you have entered is not recognized");
-        VendingItem item = vendingStorage.get(getTennisItem(itemId));
-        if(item.getStock() < amount) throw new IllegalArgumentException("There is not enough of this item.");
-        switch(itemId){
-            case 0:
-                cart.put(TennisItem.CANNED_BALL, cart.getOrDefault(TennisItem.CANNED_BALL, 0)+amount);
-                break;
-            case 1:
-                cart.put(TennisItem.GRIP, cart.getOrDefault(TennisItem.GRIP, 0)+amount);
-                break;
-            case 2:
-                cart.put(TennisItem.TENNIS_STRING, cart.getOrDefault(TennisItem.TENNIS_STRING, 0)+amount);
-                break;
-            case 3:
-                cart.put(TennisItem.KEYCHAIN, cart.getOrDefault(TennisItem.KEYCHAIN, 0)+amount);
-                break;
-            case 4:
-                cart.put(TennisItem.DAMPENER, cart.getOrDefault(TennisItem.DAMPENER, 0)+amount);
-        }
-        totalPrice += amount * item.getPrice();
+        TennisItem ti = getTennisItem(itemId);
+        VendingItem vi = vendingStorage.get(ti);
+        if(vi.getStock() < amount) throw new IllegalArgumentException("There is not enough of this item.");
+        cart.put(ti, cart.getOrDefault(ti, 0)+amount);
+        totalPrice += amount * vi.getPrice();
     }
 
     public void completeTransaction(){
