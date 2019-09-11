@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         TennisVendingMachine tvm = new TennisVendingMachine();
-        tvm.intializeItems();
+        tvm.init();
         System.out.println("Welcome to the Tennis Vending Machine. Catering towards all of your tennis needs. Below is what we have available:");
 
         while(!tvm.transactionCompleted){ //TODO: Rewrite logic to cancel transaction

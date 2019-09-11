@@ -25,7 +25,7 @@ public class TennisVendingMachine {
         }
     }
 
-    public void intializeItems() {
+    public void init() {
         vendingStorage = new HashMap<TennisItem, VendingItem>(){{
            put(TennisItem.CANNED_BALL, new CannedBalls("Canned Balls", 10.00, 40, 0));
            put(TennisItem.GRIP, new Grip("Grips", 5.00, 40, 1));
