@@ -9,7 +9,7 @@ public class TennisVendingMachine {
     double totalPrice = 0.0;
 
     public void showDisplay(){
-        System.out.println(
+        System.out.println("\n"+
                 prettify("ITEM")  +
                 prettify("PRICE")  +
                 prettify("STOCK") +
@@ -27,11 +27,11 @@ public class TennisVendingMachine {
 
     public void intializeItems() {
         vendingStorage = new HashMap<TennisItem, VendingItem>(){{
-           put(TennisItem.CANNED_BALL, new CannedBalls("CannedBalls", 10.00, 40, 0));
-           put(TennisItem.GRIP, new Grip("Grip", 5.00, 40, 1));
+           put(TennisItem.CANNED_BALL, new CannedBalls("Canned Balls", 10.00, 40, 0));
+           put(TennisItem.GRIP, new Grip("Grips", 5.00, 40, 1));
            put(TennisItem.TENNIS_STRING, new TennisString("Strings", 20.00, 20, 2));
-           put(TennisItem.KEYCHAIN, new Keychain("Keychain", 8.00, 20, 3));
-           put(TennisItem.DAMPENER, new Dampeners("Dampener", 4.00, 40, 4));
+           put(TennisItem.KEYCHAIN, new Keychain("Keychains", 8.00, 20, 3));
+           put(TennisItem.DAMPENER, new Dampeners("Dampeners", 4.00, 40, 4));
         }};
     }
 
